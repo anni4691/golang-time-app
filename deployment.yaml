@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-datetime-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: go-datetime-app
+  template:
+    metadata:
+      labels:
+        app: go-datetime-app
+    spec:
+      containers:
+      - name: go-datetime-app
+        image: go-datetime-app
+        ports:
+        - containerPort: 8080
